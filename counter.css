@@ -47,3 +47,40 @@ body{
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 */
+/* Mobile responsive */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 50px;
+        margin-bottom: 30px;
+    }
+    
+    .day-counter {
+        gap: 6px;
+        top: 58%; /* Push counter down to create more space from h1 */
+    }
+    
+    .day-counter .digit {
+        width: 40px;
+        height: 60px;
+        font-size: 36px;
+        border: 1px solid #333;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 36px;
+        margin-bottom: 40px;
+    }
+    
+    .day-counter {
+        gap: 4px;
+        top: 60%; /* Push down even more on small phones */
+    }
+    
+    .day-counter .digit {
+        width: 32px;
+        height: 50px;
+        font-size: 28px;
+    }
+}
