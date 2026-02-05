@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+       name="viewport"
+       content="width=device-width, initial-scale=1.0" />
+    <title>COUNTER PAGE</title>
+    <link rel="stylesheet" href="counter.css" />
+  </head>
+  <body>
+     
+          <h1 class="title">glasses of milk drank</h1>
+     
+    <div class="day-counter">
+        <div class="digit" data-value="0">0</div>
+        <div class="digit" data-value="0">0</div>
+        <div class="digit" data-value="0">0</div>
+    </div>
+    
+    <script>
+        function getDayOfYear() {
+            const now = new Date();
+            const start = new Date(now.getFullYear(), 0, 0);
+            const diff = now - start;
+            const oneDay = 1000 * 60 * 60 * 24;
+            return Math.floor(diff / oneDay);
+        }
+    
+        function updateDayCounter() {
+            const dayOfYear = getDayOfYear();
+            const dayString = String(dayOfYear).padStart(3, '0');
+            const digits = document.querySelectorAll('.day-counter .digit');
+            
+            dayString.split('').forEach((digit, index) => {
+                const digitElement = digits[index];
+                const currentValue = digitElement.getAttribute('data-value');
+                
+                if (currentValue !== digit) {
+                    digitElement.classList.add('flip');
+                    setTimeout(() => {
+                        digitElement.textContent = digit;
+                        digitElement.setAttribute('data-value', digit);
+                        digitElement.classList.remove('flip');
+                    }, 150);
+                }
+            });
+        }
+    
+        // Run on page load
+        updateDayCounter();
+        
+        // Update every hour
+        setInterval(updateDayCounter, 3600000);
+    </script>
+    
+  </body>
+</html>
