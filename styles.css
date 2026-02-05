@@ -17,6 +17,7 @@ body {
     margin-right: auto;
     width: 80%;
     max-width: 600px;
+    vertical-align: middle;
 }
 @media (max-width: 768px) {
     #milk-bottle {
