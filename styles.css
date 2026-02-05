@@ -19,6 +19,10 @@ body {
     max-width: 600px;
     vertical-align: middle;
 }
+.body a  {
+    display: block;
+    line-height: 0;
+}
 @media (max-width: 768px) {
     #milk-bottle {
         width: 90%;
