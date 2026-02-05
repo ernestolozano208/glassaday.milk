@@ -11,4 +11,18 @@ body {
     margin-left: auto;
     margin-right: auto;
     width: 80%;
+    max-width: 600px;
+}
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    #milk-bottle {
+        width: 90%; /* Slightly wider on mobile */
+        margin-top: 20px; /* Add some top spacing */
+    }
+}
+
+@media (max-width: 480px) {
+    #milk-bottle {
+        width: 95%; /* Nearly full width on small phones */
+    }
 }
